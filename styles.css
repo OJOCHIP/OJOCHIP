@@ -286,6 +286,7 @@ footer {
     font-size:34px;
     font-weight:600;
     min-width:280px;
+    color: var(--text-color);
 }
 
 .text-animation span{
@@ -293,14 +294,14 @@ footer {
 }
 
 .text-animation span::before{
-    content: "slogan";
+    content: "";
     color: var(--main-color);
     animation: words 20s infinite;
 }
 
 .text-animation span::after{
     content: "";
-    background-color: var(--bg-color);
+    background-color: #131313;
     position:absolute;
     width:calc(100% + 8px);
     height: 100%;
@@ -316,31 +317,24 @@ footer {
     }
 }
 
-@keyframes words{
-    0%,
-    20%{
-        content:"Slogan";
+@keyframes words {
+    0%, 20% {
+        content: "United We Search";
     }
-    21%,
-    40%{
-        content:"United We Search";
-    }
-    41%,
-    60%{
-        content:"United We Find";
-    }
-    61%,
-    80%{
-        content:"United We Search"
-    
-
-    }
-    81%,
-    100%{
+    20.1%, 40% {
         content: "United We Find";
     }
-
+    40.1%, 60% {
+        content: "United We Heal";
+    }
+    60.1%, 80% {
+        content: "United We Search";
+    }
+    80.1%, 100% {
+        content: "United We Find";
+    }
 }
+
 
 @keyframes typing{
     10%,
