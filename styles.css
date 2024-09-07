@@ -1,7 +1,377 @@
-body{
-    background-color: aqua;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border:none;
+    outline:none;
+    scroll-behavior: smooth;
+
+
 }
 
-.button-click{
-    background-color: green;
+:root {
+    --bg-color: #080808;
+    --second-bg-color:#131313;
+    --text-color:white;
+    --main-color:red;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    padding: 20px 100px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    z-index: 99;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+ html body{
+    overflow-x: hidden;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    min-width: 100vh;
+    background: var(--second-bg-color);
+    background-size:cover;
+    background-position:center;
+    padding: 0 10%;
+
+
+
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 12% ;
+    
+}
+
+footer {
+    margin-top: auto; /* Ensures footer is pushed to the bottom */
+    
+}
+
+.connect-logo{
+    
+    
+    display:flex;
+    align-items: center;
+    cursor:pointer;
+    transition: 0.3s ease;
+    color: var(--text-color);
+    transition: .5s ease;
+
+}
+
+.connect-logo:hover{
+    transform:scale(1.1);
+    
+}
+
+
+    
+.logo {
+    font-size: 3em;
+    user-select:none;
+    line-height: 1
+}
+
+.chip-logo{
+    font-size: 1em;
+    color:#fff;
+    user-select:none;
+    
+
+    
+    
+    
+}
+
+.lowered-j{
+    display: inline-block; /* Ensure it's treated as a block element for alignment */
+    vertical-align: middle; /* Aligns the "J" vertically with the middle of surrounding text */
+    bottom: -12px;
+}
+
+.navigation a {
+    position:relative;
+    font-size: 1.2em;
+    color: #fff;
+    text-decoration: none;
+    font-weight:500;
+    margin-left: 40px;
+}
+
+.navigation a::after{
+    content:'';
+    position: absolute;
+    left:0;
+    bottom:-6px;
+    width:100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition:transform .5s;
+
+}
+
+.navigation a:hover::after{
+    transform: scaleX(1);
+}
+
+.navigation .btnCHAT-popup {
+    width:130px;
+    height:50px;
+    background:transparent;
+    border: 2px solid #fff;
+    border-radius:6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color:#fff;
+    font-weight: 500;
+    margin-left:40px;
+    transition:.5s;
+}
+
+.navigation .btnCHAT-popup:hover{
+    background:#fff;
+    color: #162938;
+
+}
+
+#menu-icon{
+    font-size: 3.6rem;
+    color: white;
+    display: none;
+}
+
+
+
+.watches{
+    display:flex;
+    align-items: center;
+
+}
+
+.watches-box{
+    background-size: cover;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.watches .heading{
+    margin-bottom:5rem;
+    color:white;
+
+}
+
+.watches-box img{
+    width:15rem;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.wrapper{
+    max-width: auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap: 3rem;
+}
+
+.watches-item{
+    min-height:550px;
+    max-width: 450px;
+    background: rgba(0,0,0,0.7);
+    border:3px solid rgba(238,238,238,0.2);
+    border-radius:2rem;
+    margin:0 2rem;
+    padding:30px 60px;
+    cursor:pointer;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    gap: 1.5em;
+    color:white;
+    transition:0.4s ease-in-out;
+}
+
+.watches-item:hover{
+    border: 3px solid var(--main-color);
+    transform: translateY(-10px)scale(1.03);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+.watches-item h2{
+    font-size: 2.5rem;
+}
+
+.buy{
+    width:130px;
+    height:50px;
+    background:transparent;
+    border: 2px solid #fff;
+    border-radius:6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color:#fff;
+    font-weight: 500;
+    transition:.5s;
+
+}
+
+.buy:hover{
+    background:#fff;
+    color: #162938;
+}
+
+.heading{
+    font-size: 50px;
+    
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 1fr; /* Stack items on smaller screens */
+    }
+
+    header {
+        padding: 10px 20px; /* Adjust header padding */
+    }
+}
+
+.footer{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background-color: vr(--bg-color);
+    width: 100%;
+}
+
+.socials-ufide{
+    display:flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align:left;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+
+
+.socials-ufide h3{
+    margin-bottom:2rem;
+    margin-top:1rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.text-animation{
+    font-size:34px;
+    font-weight:600;
+    min-width:280px;
+}
+
+.text-animation span{
+    position:relative;
+}
+
+.text-animation span::before{
+    content: "slogan";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    position:absolute;
+    width:calc(100% + 8px);
+    height: 100%;
+    border-left:3px solid var(--bg-color);
+    right:-8px;
+    animation:cursor 0.6s infinite,typing 20s steps(14) infinite;
+
+}
+
+@keyframes cursor{
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+
+@keyframes words{
+    0%,
+    20%{
+        content:"Slogan";
+    }
+    21%,
+    40%{
+        content:"United We Search";
+    }
+    41%,
+    60%{
+        content:"United We Find";
+    }
+    61%,
+    80%{
+        content:"United We Search"
+    
+
+    }
+    81%,
+    100%{
+        content: "United We Find";
+    }
+
+}
+
+@keyframes typing{
+    10%,
+    15%,
+    20%,
+    25%,
+    30%,
+    35%,
+    40%,
+    45%,
+    50%,
+    55%,
+    60%,
+    65%,
+    70%,
+    75%,
+    80%,
+    85%,
+    90%,
+    95%{
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+        width: calc(100% + 8px);
+    }
 }
