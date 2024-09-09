@@ -14,6 +14,9 @@
     --second-bg-color:#131313;
     --text-color:white;
     --main-color:red;
+    --color-text: #ffffff;
+    --color-bg: #000000;
+    --window-height:100vh;
 }
 
 header{
@@ -382,8 +385,290 @@ a:visited {
 }
 
 
-/* missing children div*/
+/* missing children div and page*/
 
-.missing-children{
-    margin-top:20%;
+.Tanimation-loved-ones{
+    font-size:34px;
+    font-weight:600;
+    min-width:280px;
+    color: var(--text-color);
+    margin-bottom: 10%;
+    
+}
+
+.Tanimation-loved-ones span{
+    position:relative;
+}
+
+.Tanimation-loved-ones span::before{
+    content: "";
+    color: var(--main-color);
+    animation: loved-words 20s infinite;
+}
+
+.Tanimation-loved-ones span::after{
+    content: "";
+    background-color: #131313;
+    position:absolute;
+    width:calc(100% + 8px);
+    height: 100%;
+    border-left:3px solid var(--bg-color);
+    right:-8px;
+    animation:cursor 0.6s infinite,typing-loved 20s steps(14) infinite;
+
+}
+
+@keyframes cursor{
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+
+@keyframes loved-words {
+    0%, 20% {
+        content: "CHILDREN";
+    }
+    20.1%, 40% {
+        content: "LOVED ONES";
+    }
+    40.1%, 60% {
+        content: "CONECTION";
+    }
+    60.1%, 80% {
+        content: "CHILDREN";
+    }
+    80.1%, 100% {
+        content: "LOVED ONES";
+    }
+}
+
+
+@keyframes typing-loved{
+    10%,
+    15%,
+    20%,
+    25%,
+    30%,
+    35%,
+    40%,
+    45%,
+    50%,
+    55%,
+    60%,
+    65%,
+    70%,
+    75%,
+    80%,
+    85%,
+    90%,
+    95%{
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+        width: calc(100% + 8px);
+    }
+}
+
+.twoBody{
+    
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #131313;
+    
+}
+
+/*book*/
+
+.book{
+    
+    position:relative;
+    width:350px;
+    height:500px;
+    color:black;
+    transition:transform 0.5s;
+
+}
+
+.cover-img {
+    width:350px;
+    height:500px;
+    object-fit: cover;
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius: 0 25px 25px 0;
+}
+    
+    
+
+.paper{
+    
+    position:absolute;
+    width: 100%;
+    height:100%;
+    top:0;
+    left:0;
+    perspective: 1500px;
+    
+}
+
+main{
+    margin-top:30%;
+    
+}
+
+.front,
+.back {
+    background-color: white;
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    border-radius: 0 25px 25px 0;
+    transform-origin:left;
+    transition: transform 1s;
+}
+
+.front{
+    z-index:1;
+    backface-visibility: hidden;
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.back{
+    z-index: 0;
+}
+
+/*paper flipped affect*/
+
+.flipped .front,
+.flipped .back{
+    transform: rotateY(-180deg);
+    
+}
+
+
+
+.front-content,
+.back-content{
+    width:100%;
+    height: 100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
+}
+
+.back-content{
+    transform: rotateY(180deg);
+}
+
+/* controller buttons*/
+
+.missing-button{
+    border:none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.5s;
+    
+    
+
+}
+
+button:focus{
+    outline: none;
+
+}
+
+button:hover i{
+    color:aqua;
+}
+
+i{
+    font-size:50%;
+    color:aqua;
+}
+
+/*paper stack order*/
+
+#p1{
+    z-index: 3;
+}
+
+#p2 {
+    z-index:2;
+}
+
+#p3{
+    z-index:1;
+}
+
+.next-btn, .prev-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left:15%;
+    margin-right:15%;
+    
+    
+    
+}
+
+.prev-btn {
+    left: 10px; /* Adjust distance from the left */
+}
+
+.next-btn {
+    right: 10px; /* Adjust distance from the right */
+}
+
+.missing-button-img{
+    width:50%;
+    height:50%;
+}
+
+
+/*page 2*/
+
+
+.CM-photo{
+    width:15rem;
+    border-radius: 15%;
+    border: 1px solid var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.front-content-box{
+    
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    height:500px;
+    width:350px;
+    cursor:pointer;
+    display:absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    gap: 1.5em;
+    color:black;
+    object-fit: cover;
+    border-radius: 0 25px 25px 0;
+    
 }

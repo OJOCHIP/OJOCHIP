@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="second-page-html" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OJO CHIP</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body>
+<body class="twoBody">
+    <!---this is the song area-->
     <audio id="song">
         <source src="Peaceful Warm Autumn (1).mp3">song</audio>
 
-
+<!--this is the navbar-->
     <header>
         <a href="index.html">
             <div class="connect-logo"><h2 class="logo">O<span class="lowered-j">J</span>O</h2>
@@ -30,18 +32,91 @@
             
         </nav>
     </header>
-
-    <div class="missing-children">
-        <h1>MISSING CHILDREN</h1>
-        <p>     UNDER CONSTRUCTION!!!!!!!!!</p>
+<main class="main-missing">
+    <!--this is the heading "missing cildren-missing loved ones"-->
+    <div class="missing-loved-ones">
+        <h2 class="Tanimation-loved-ones"> MISSING <span></span></h2>
     </div>
-        
-<script src="script.js"></script>
+
+
+    <!--this is the flipbook-->
+<!--previous button-->
+<button id="prev-btn" class="prev-btn missing-button">
+    <img class="missing-button-img" src="arrow.3779d7ca.png" alt="Previous" />
+</button>
+
+<!--Book-->
+<div id="book" class="book">
+    <!-- Paper 1 -->
+    <div id="p1" class="paper">
+        <div class="front">
+            <div id="f1" class="front-content">
+                <h1>Front 1</h1>
+                <img class="cover-img" src="roughness_2.4c20e531.jpg" alt="rough">
+            </div>
+        </div>
+        <div class="back">
+            <div id="b1" class="back-content">
+                <h1>Back 1</h1>
+            </div>
+        </div>
+    </div>
+    <!--paper 2-->
+    <div id="p2" class="paper">
+        <div class="front">
+            <div id="f2" class="front-content">
+                <div class="front-content-box">
+                    <img class="CM-photo" src="levi-meir-clancy-g5_XkcUrlyg-unsplash.jpg">
+                    <h1>MISSING</h1>
+                    <img class="missing-photo" src="">
+                    <p>NAME: Kristine</p>
+                    <p>AGE: 14</p>
+                    <p>Height: 5'5ft</p>
+                    <p>last Seen: Titusville, FL</p>
+                    <p>Weight: 120 LB</p></div>
+            </div>
+        </div>
+        <!--back of the page-->
+        <div class="back">
+            <div id="b2" class="back-content">
+                <h1>Back 2</h1>
+            </div>
+        </div>    
+    </div>
+    
+    <!--paper 3-->
+    <div id="p3" class="paper">
+        <div class="front">
+            <div id="f3" class="front-content">
+                <h1>Page 3</h1>
+            </div>
+        </div>
+        <!--back of the page-->
+        <div class="back">
+            <div id="b3" class="back-content">
+                <h1>Back 3</h1>
+            </div>
+        </div>    
+    </div>
+</div>
+    
+
+<!--next button-->
+<button id="next-btn" class="next-btn missing-button">
+    <img class="missing-button-img" src="secondtimearrow.3779d7ca(1).png" alt="Previous" />
+    
+</button>
+       
+ 
+
+</main>
+
 </body>
 <footer class="footer">
     <div class="socials-ufide">
         <h3 class="text-animation"> At UFide <span></span></h3>
         
     </div>
+    
 </footer>
 </html>
